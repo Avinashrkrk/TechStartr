@@ -1,3 +1,2 @@
 ## Techstartr
 fdg
-d
