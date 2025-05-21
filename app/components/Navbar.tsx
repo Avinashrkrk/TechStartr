@@ -8,7 +8,7 @@ const Navbar = async () => {
   const session = await auth();
 
   return (
-    <header className="px-5 py-3 bg-white shadow-sm font-work-sans">
+    <header className="px-5 py-3 bg-black shadow-sm font-work-sans">
       <nav className="flex justify-between items-center">
         <Link href="/">
           <Image src="/logo1.png" alt="logo" width={144} height={30} />
@@ -18,7 +18,7 @@ const Navbar = async () => {
           {session && session?.user ? (
             <>
               <Link href="/startup/create">
-                <span className="max-sm:hidden">Create</span>
+                <span className="max-sm:hidden w-full h-full flex items-center gap-2 px-8 py-3 bg-[#B931FC] text-white rounded-[14px] bg-gradient-to-t from-[#a62ce2] to-[#c045fc]">Create</span>
                 {/* <BadgePlus className="size-6 sm:hidden" /> */}
               </Link>
 
@@ -29,8 +29,10 @@ const Navbar = async () => {
                   await signOut({ redirectTo: "/" });
                 }}
               >
-                <button type="submit">
-                  <span className="max-sm:hidden">Logout</span>
+                <button type="submit" 
+                  className="relative cursor-pointer opacity-90 hover:opacity-100 transition-opacity p-[2px] bg-black rounded-[16px] bg-gradient-to-t from-[#8122b0] to-[#dc98fd] active:scale-95"
+                >
+                  <span className="max-sm:hidden w-full h-full flex items-center gap-2 px-8 py-3 bg-[#B931FC] text-white rounded-[14px] bg-gradient-to-t from-[#a62ce2] to-[#c045fc]">Logout</span>
                   {/* <LogOut className="size-6 sm:hidden text-red-500" /> */}
                 </button>
               </form>
@@ -43,7 +45,7 @@ const Navbar = async () => {
                   />
                   <AvatarFallback>AV</AvatarFallback>
                 </Avatar> */}
-                <span>{session?.user?.name}</span>
+                <span className="w-full h-full flex items-center gap-2 px-8 py-3 bg-[#B931FC] text-white rounded-[14px] bg-gradient-to-t from-[#a62ce2] to-[#c045fc]">{session?.user?.name}</span>
               </Link>
             </>
           ) : (
@@ -54,7 +56,8 @@ const Navbar = async () => {
                 await signIn("github");
               }}
             >
-              <button type="submit">Login</button>
+              <button type="submit" 
+               className="relative cursor-pointer opacity-90 hover:opacity-100 transition-opacity p-[2px] bg-black rounded-[16px] bg-gradient-to-t from-[#8122b0] to-[#dc98fd] active:scale-95"> <span className="max-sm:hidden w-full h-full flex items-center gap-2 px-8 py-3 bg-[#B931FC] text-white rounded-[14px] bg-gradient-to-t from-[#a62ce2] to-[#c045fc]">Login</span></button>
             </form>
           )}
         </div>
