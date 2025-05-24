@@ -47,7 +47,7 @@ export default function StartupCard({post} : {post: StartupTypeCard}){
                     <p className="text-16-medium font-medium text-[16px] text-black">{category}</p>
                 </Link>
                 <button className="startup-card_btn rounded-full bg-black font-medium text-[16px] text-white px-5 py-3 !important" >
-                    <Link href={`/startuup/${_id}`}>Details</Link>
+                    <Link href={`/startup/${_id}`}>Details</Link>
                 </button>
             </div>
         </li>
