@@ -10,9 +10,9 @@ export default async function Home({ searchParams} : {
 }) {
 
   const query = (await searchParams).query
+  const params = {search: query || null}
 
-  // const posts = await client.fetch(STARTUPS_QUERY)
-  const {data : posts} = await sanityFetch({query: STARTUPS_QUERY})
+  const {data : posts} = await sanityFetch({query: STARTUPS_QUERY, params})
 
   return (
     <>
@@ -27,7 +27,7 @@ export default async function Home({ searchParams} : {
 
     <section className="section_container px-6 py-10 max-w-7xl mx-auto">
       <p className="text-2xl font-semibold">
-        {query ? `Search results for ${query}` : 'All Startups'}
+        {query ? `Search results for "${query}"` : 'All Startups'}
       </p>
 
       <ul className="mt-7 card_grid grid md:grid-cols-3 sm:grid-cols-2 gap-5">
