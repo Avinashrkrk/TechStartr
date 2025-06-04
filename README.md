@@ -1,3 +1,1 @@
 ## Techstartr
-bv
-vvg
